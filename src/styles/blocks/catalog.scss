@@ -1,12 +1,8 @@
 .catalog {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, $card-width);
   gap: $card-gap;
   justify-content: center;
-  justify-items: center;
-
-  max-width: 944px;
-  margin: 0 auto;
 
   &__card {
     display: flex;
@@ -18,24 +14,21 @@
     border-radius: 5px;
   }
 
-  @media screen and (max-width: $breakpoint-l) and (min-width: $breakpoint-m){
+  @media screen and (max-width: $breakpoint-l) and (min-width: $breakpoint-m) {
     & {
-      grid-template-columns: repeat(3, 1fr);
-      max-width: $card-width * 3 + $card-gap * 2;
+      grid-template-columns: repeat(3, $card-width);
     }
   }
 
-  @media screen and (max-width: $breakpoint-m) and (min-width: $breakpoint-s){
+  @media screen and (max-width: $breakpoint-m) and (min-width: $breakpoint-s) {
     & {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: $card-width * 2 + $card-gap;
+      grid-template-columns: repeat(2, $card-width);
     }
   }
 
-  @media screen and (max-width: $breakpoint-s){
+  @media screen and (max-width: $breakpoint-s) {
     & {
-      grid-template-columns: 1fr;
-      max-width: $card-width;
+      grid-template-columns: $card-width;
     }
   }
 }
